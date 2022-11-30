@@ -11,7 +11,7 @@ public class salaryobj {
     private decimal taxableincome {get;set;}
 
 
-    //This will parse a file for dynamic deduction given an amount. File format is min~max:rule;min~max:rule. rule is evaluated. Probably has a huge risk of abuse but im lazy.
+    //This will parse a file for dynamic deduction given an amount. File format is min~max:rule;min~max:rule. {am} will be replaced with the amount variable. rule is evaluated. Probably has a huge risk of abuse but im lazy.
     private decimal calc_dynamic(string filename, decimal amount) {
         try {
             string[] splitline = System.IO.File.ReadAllText(filename).Split(';');
